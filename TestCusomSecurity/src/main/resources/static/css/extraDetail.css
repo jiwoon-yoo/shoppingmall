@@ -1,0 +1,26 @@
+/* 배송 정보 섹션 */
+
+.parent-container {
+    height: 100vh; /* 화면 높이의 100%를 컨테이너 높이로 설정 */
+    margin: 50px 500px 50px 500px;
+}
+
+
+.shipping-info {
+    margin-top: 20px;
+}
+
+/* 반환 및 교환 섹션 */
+.returns-info {
+    margin-top: 20px;
+}
+
+/* 환불 정책 섹션 */
+.refund-policy {
+    margin-top: 20px;
+}
+
+/* FAQ 섹션 */
+.faq {
+    margin-top: 20px;
+}

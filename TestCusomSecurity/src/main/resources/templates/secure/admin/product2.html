@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<link rel="stylesheet" type="text/css" th:href = "@{/css/product2.css}"
+
+</head>
+<body>
+
+	<div th:replace = "fragments/header"></div>
+
+	
+	<h4>	Product Registration </h4>
+	<div class="parent-container">
+	
+		<form action="/productRegister" method="post" enctype="multipart/form-data">
+	        <!-- 카테고리 선택 -->
+	        <label for="category"   class="label-style" >category :</label>
+	        <select name="category" id="category"  class="input-style">
+	            <option value=1>top</option>
+	            <option value=2>bottom</option>
+	            <option value=3>dress</option>
+	            <option value=4>jacketcoat</option>
+	        </select>
+	        <br>
+	
+	        <!-- 제품 이름 입력 -->
+	        <label for="productName"   class="label-style" >product name :</label>
+	        <input type="text" name="productName" id="productName" class="input-style"  required>
+	        <br>
+	
+	        <!-- 가격 입력 -->
+	        <label for="price" class="label-style" >price :</label>
+	        <input type="number" name="price" id="price" step="0.01" required>
+	        <br>
+	
+	        <!-- 색상 선택 -->
+	        <label for="color"  class="label-style" >color :</label>
+	        <select name="color">
+	            <option th:each = "i : ${colors}" th:text = "${i.colorName}" th:value="${i.colorId}"></option>
+	        </select>
+	        <br>
+	
+	        <!-- 사이즈 선택 -->
+	        <label for="size"  class="label-style" >size :</label>
+	        <select name="size" id="size">
+	            <option value=1>S</option>
+	            <option value=2>M</option>
+	            <option value=3>L</option>
+	        </select>
+	        <br>
+	
+	        <!-- 상세 내용 입력 -->
+	        <label for="detail"  class="label-style" >deatil :</label>
+	        <textarea name="detail" id="detail"  class="input-style"   required></textarea>
+	        <br>
+	
+	     	<label for="detail"  class="label-style">material:</label>
+	        <input type="text" name="material"  class="input-style"  required>
+	        <br>
+	
+	        <!-- 이미지 업로드 -->
+	        <label for="image"  class="label-style" >image :</label>
+	        <input type="file" name="images"   class="input-style file-input-style"  multiple  required>
+	        <br>
+	
+	        <!-- 재고 수량 입력 -->
+	        <label for="stockQuantity"  class="label-style">stock quantity :</label>
+	        <input type="number" name="stockQuantity" id="stockQuantity"  class="input-style"  required>
+	        <br>
+	
+	
+	
+	        <!-- 제출 버튼 -->
+	        <input type="submit" value="register"  class="submit-button-style">
+	    </form>
+		
+	</div>
+    
+	
+	
+	
+	<div th:replace = "fragments/footer"></div>
+
+	
+</body>
+</html>

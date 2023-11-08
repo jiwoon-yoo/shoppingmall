@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	
+	<link rel="stylesheet" type="text/css" th:href = "@{/css/orderDetail.css}">
+
+
+</head>
+<body>
+	
+	<div th:replace="fragments/header"></div>
+	
+	<h4>customer management</h4>
+	
+	<form class="search-form" method="post" th:action="@{/searchByUsername}">
+	    <label for="username">User Name Search:</label>
+	    <input type="text" name="username" id="username" placeholder="Enter user name" />
+	    <input type="submit" value="Search" />
+	</form>
+	
+	<form class="clear-form" method="get" th:action="@{/clearUsernameSearch}">
+	    <input type="submit" value="total" />
+	</form>
+
+	
+	
+	
+	<h4>customer list</h4>
+
+	<div class="parent-container">
+		<table  class="order-detail-table">
+			<tr>
+				<th>user name</th>
+				<th>total payment</th>
+				<th>total payment count</th>
+				<th>register date</th>
+				<th>order detail</th>
+			</tr>
+			<tr th:each = "i : ${users}">
+				<td th:text = "${i.username}"></td>
+				<td th:text = "${i.totalPayment}" ></td>
+				<td th:text = "${i.totalPaymentCount}"></td>
+				<td th:text = "${i.registerDate}" ></td>
+				<td> <a th:href = "@{/userDetail/{userId} (userId = ${i.userId} )   }"> detail</a>   </td>
+			</tr>
+		</table>
+	</div>
+	
+	
+	
+	<div th:replace="fragments/footer"></div>
+
+</body>
+</html>
