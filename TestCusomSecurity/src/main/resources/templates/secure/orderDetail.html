@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	
+	<link rel="stylesheet" type="text/css" th:href = "@{/css/orderDetail.css}">
+
+</head>
+<body>
+
+	<div th:replace = "fragments/header"></div>
+	
+
+
+	<div class="parent-container">
+
+		<h4>order items for this order </h4>	
+		<table class="order-detail-table">
+			<tr>
+				<th>image</th>
+				<th>recipientName </th>
+				<th>orderDate</th>
+				<th>productName </th>
+				<th>color</th>
+				<th>size</th>			
+				<th>price </th>
+				<th>shippingStatus</th>
+				<th>operation</th>
+			</tr>
+			<tr th:each = "i : ${orderItems}">
+				<td> <img th:src = "@{${i.imageUrl}}">  </td>
+				<td th:text = "${i.recipientName}"></td>
+				<td th:text = "${i.orderDate}"></td>
+				<td th:text = "${i.productName}"  ></td>
+				<td th:text = "${i.colorName}"></td>
+				<td th:text = "${i.sizeName}"></td>			
+				<td th:text = "${i.price }"></td>
+				<td th:text = "${i.shippingStatus}"></td>
+				<td>
+					<a th:href = "@{/requestReturn/{orderItemId}/{orderId}  (orderItemId = ${i.orderItemId}, orderId = ${i.orderId}  )   }">request return</a>
+				</td>
+			</tr>		
+		</table>	
+	</div>
+
+
+	
+	
+	<div th:replace = "fragments/footer"></div>
+
+</body>
+</html>

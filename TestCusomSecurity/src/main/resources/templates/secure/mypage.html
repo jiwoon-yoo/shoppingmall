@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	
+	<link rel="stylesheet" type="text/css" th:href = "@{/css/mypage.css}">
+
+</head>
+<body>
+
+	<div th:replace = "fragments/header"></div>
+	
+	<h4>my page(나의 주문 내역)</h4>
+	
+	<div class="parent-container">
+		<table  class="my-table">
+			<tr>
+				<th>order date</th>
+				<th>total amount for this order</th>
+				<th>order detail</th>
+			</tr>
+			<tr th:each = "i : ${orders}">
+				<td th:text = "${i.orderDate}"></td>
+				<td th:text = "${i.totalAmount}"></td>
+				<td>
+					<a th:href = "@{/orderDetail/{orderId} (orderId = ${i.orderId}  )    }"> detail</a>
+				</td>
+			</tr>
+		</table>
+		
+		
+	</div>
+	
+
+
+
+	<div th:replace = "fragments/footer"></div>
+
+
+</body>
+</html>

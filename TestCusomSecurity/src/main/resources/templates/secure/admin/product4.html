@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<link rel="stylesheet" type="text/css" th:href = "@{/css/product2.css}"
+
+</head>
+<body>
+
+	
+	<div th:replace = "fragments/header"></div>
+
+
+	
+	
+
+	<div class="parent-container">
+				
+		<form action="/registerModel" method="post" enctype="multipart/form-data" th:object = "${product}" >
+	
+			<label for="category">카테고리:</label>
+			<select name="category" id="category" th:field="*{categoryId}" required disabled>
+			    <option value=1 th:selected = "${categoryid} == 1">top</option>
+			    <option value=2  th:selected = "${categoryid} == 2">bottom</option>
+			    <option value=3  th:selected = "${categoryid} == 3" >dress</option>
+			    <option value=4 th:selected = "${categoryid} == 4"  >jacketcoat</option>
+			</select>
+			<br>
+			
+			<input type="hidden" name = "productId" th:field = "*{productId}">
+			
+			<!-- 제품 이름 입력 -->
+			<label for="productName">제품 이름:</label>
+			<input type="text" name="productName" id="productName" th:field="*{productName}" required  disabled>
+			<br>
+			
+			<!-- 가격 입력 -->
+			<label for="price">가격:</label>
+			<input type="number" name="price" id="price" step="0.01" th:field="*{price}" required disabled>
+			<br>
+			
+			<!-- 색상 선택 -->
+			<label for="color">색상:</label>
+			<select name="color" id="color" th:field="*{colorId}">
+			    <option th:each="i : ${colors}" th:text="${i.colorName}" th:value="${i.colorId}"></option>
+			</select>
+			<br>
+			
+			<!-- 사이즈 선택 -->
+			<label for="size">사이즈:</label>
+			<select name="size" id="size" th:field="*{sizeId}">
+			    <option value=1>S</option>
+			    <option value=2>M</option>
+			    <option value=3>L</option>
+			</select>
+			<br>
+			
+			<!-- 상세 내용 입력 -->
+			<label for="detail">상세 내용:</label>
+			<textarea name="detail" id="detail" th:field="*{detail}" required disabled></textarea>
+			<br>
+			
+			<label for="material">material:</label>
+			<input type="text" name="material" id="material" th:field="*{material}" required  disabled>
+			<br>
+			
+			<!-- 이미지 업로드 -->
+			<label for="images">제품 이미지:</label>
+			<input type="file" name="images" id="images" multiple required>
+			<br>
+			
+			<!-- 재고 수량 입력 -->
+			<label for="stockQuantity">재고 수량:</label>
+			<input type="number" name="stockQuantity" id="stockQuantity" th:field="*{quantity}" required>
+			<br>
+			
+			<!-- 제출 버튼 -->
+			<input type="submit" value="add model"  class="submit-button-style">
+	    </form>
+		
+	</div>
+	
+	
+	
+	
+	<div th:replace = "fragments/footer"></div>
+
+</body>
+</html>

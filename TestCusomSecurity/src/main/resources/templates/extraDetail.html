@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/extraDetail.css}"/>
+
+</head>
+<body>
+
+	<div th:replace="fragments/header"></div>
+
+	
+	
+	<div class="parent-container">
+		<div class="shipping-info" th:if="${detail == 'shipping'}">
+		  <h2>Shipping Information - Korea</h2>
+		  <p>Once your order has been processed in our warehouse, it will take between 3-5 working days to be delivered to your doorstep. During a sale period, please allow additional processing time for your order to be despatched. Please note that we have no control over delivery delays that may occur from the shipping carriers during holiday periods due to a high volume of parcels.</p>
+		  <p><strong>Free Shipping:</strong> Shipping within Korea is free of charge for all orders.</p>
+		  <p><strong>International Shipping:</strong> At this time, we only ship within Korea.</p>
+		</div>
+	
+	
+		<div class="returns-info" th:if="${detail == 'return'}">
+		  <h2>Returns and Exchanges</h2>
+		  <p>At A Blue Jaguar, we want you to love your shoes. If for any reason you are not satisfied with your purchase, we offer returns and exchanges within 14 days of delivery.</p>
+		  <p>To initiate a return or exchange, please click on the "Return an Order" link above and follow the instructions. If you would like to exchange an item, please indicate the desired style and size in the return reason field.</p>
+		  <p>Once you have submitted your request, you will receive a unique RMA code and instructions on where to deliver your item(s). Please note that we have three warehouses, and the address you should send your return to will be provided in the return instructions.</p>
+		  <p>Please ensure that your shoes are in their original packaging and unworn. We cannot process a return or exchange for items that have been damaged or marked, so please try on your shoes on a soft surface.</p>
+		  <h3>Sale Items</h3>
+		  <p>Sale items purchased with a 50% or higher discount are final sale and cannot be returned, exchanged or refunded. During a promotional period with less than a 50% discount, you may exchange your item for a different size or color.</p>
+		  <h3>Refunds</h3>
+		  <p>Refunds are not available on final sale or bundle items. If your return is eligible for a refund, we will process it within 10 working days. The refund will be applied to your credit card or original method of payment.</p>
+		  <h3>Shipping Costs</h3>
+		  <p>You are responsible for paying for your own shipping costs when returning or exchanging an item. If you are exchanging an item for a different size, we will cover the cost of shipping the new pair back to you.</p>
+		  <h3>Faulty Items</h3>
+		  <p>If you receive a faulty item, please contact our team with your order number and photos of the issue. We will advise you on the next steps.</p>
+		  <p>If you have any further questions, please email us at info@abluejaguar.com.</p>
+		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+		<div class="refund-policy" th:if="${detail == 'refund'}">
+		  <h2>Refund Policy</h2>
+		  <p>This is a refund policy for purchases made during sale events, as well as regular purchases. Orders made during sale events are final, and items cannot be returned for a refund, while items purchased with a discount of 50% or higher are final sales and cannot be returned for exchange or refund.</p>
+		  <p>For regular purchases, the Returns policy lasts for 14 days. After this period, returns cannot be accepted unless a product is faulty. To be eligible for a return, the item must be unused and in its original packaging.</p>
+		  <p>Customers will be responsible for paying all shipping costs, import duties, customs, and taxes for returning goods to the UK-based Returns Hub. If customers wish to exchange a pair of shoes for a different size, color, or style, the new shipment will be sent back with pre-paid customs duties.</p>
+		  <p>Once the return is received and inspected, customers will be notified of the approval or rejection of their refund. If approved, the refund will be processed within 7 working days and credited back to the original method of payment.</p>
+		  <p>Exchanges are offered for all items, and customers will be responsible for paying their own shipping costs. If an item is faulty or damaged, the cost of return shipping will be refunded.</p>
+		</div>
+	
+	
+	
+		<div class="faq" th:if="${detail == 'faq'}">
+		  <h2>FAQ</h2>
+		  <h3>Can I return an item I bought on sale?</h3>
+		  <p>All sale items purchased with a 50% or higher discount are final sale and cannot be returned, exchanged, or refunded. Items purchased during a promotional period with a discount lower than 50% can only be exchanged for a different size or color.</p>
+		  <p>During a sale period, we are unable to make any changes to your order. Please double-check the selected style and size before checkout.</p>
+		  
+		  <h3>How much does shipping cost?</h3>
+		  <p>Orders within South Korea are shipped free of charge. International orders are charged a flat rate of $10 USD and shipped via FedEx, DHL, or another shipping carrier based on your country. All charges are in USD.</p>
+		  <p>Shipping to PO Boxes: We cannot ship to PO Boxes at this time.</p>
+		  
+		  <h3>How long does shipping take?</h3>
+		  <p>Delivery takes between 3-5 working days from the time of dispatch, with a 1-2 day processing time in our warehouse. During a sale period, please allow additional processing time for your order to be dispatched. Please note that delivery times may vary based on your location.</p>
+		  
+		  <h3>Can I cancel my order?</h3>
+		  <p>Once your order has been placed, we cannot make changes or cancel your order. Please double-check the selected style and size before checkout.</p>
+		  
+		  <h3>How do I return an order?</h3>
+		  <p>To return your order, please contact our customer service team at <a href="mailto:info@bluejaguar.com">[insert email address]</a> within 14 days of delivery. We will provide you with a return authorization and instructions on how to proceed. Please note that all items must be returned in their original condition with their original packaging, and any shipping costs associated with the return will be at the customer's expense.</p>
+		  
+		  <h3>Can I get a refund if I don't like my order or if it doesn't fit?</h3>
+		  <p>We allow up to 14 days from the date of order delivery to return an order. If you return an item within this time period, we allow either an exchange or a refund to take place. Please note that all items must be returned in their original condition with their original packaging, and any shipping costs associated with the return will be at the customer's expense. Refunds will be processed to your original payment method.</p>
+		</div>
+		
+	</div>
+	
+
+
+
+
+	<div th:replace="fragments/footer"></div>
+
+
+
+</body>
+</html>

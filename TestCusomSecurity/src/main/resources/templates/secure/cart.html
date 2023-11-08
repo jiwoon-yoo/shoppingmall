@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+	<link rel="stylesheet" type="text/css" th:href = "@{/css/orderDetail.css}">
+
+</head>
+<body>
+
+	<div th:replace="fragments/header"></div>
+
+
+	<h4>cart page</h4>
+
+	<p th:text="${returnVal}" class = "alert-message"  ></p>
+
+
+
+	<div class="parent-container"  >
+		<table  class="order-detail-table">
+			<tr>
+				<th>image</th>
+				<th>name</th>
+				<th>color</th>
+				<th>size</th>
+				<th>price</th>
+				<th>quantity</th>
+				<th>action</th>
+			</tr>
+			<tr th:each = "i : ${cartItems}"   >
+				<td> <img alt="" th:src="@{${i.imageUrl}}"> </td>
+				<td th:text = "${i.productName}"></td>
+	
+				<td th:text = "${i.colorName}"></td>
+				<td th:text = "${i.sizeName}"></td>
+				<td th:text = "${i.price}"></td>
+				<td>
+					<form method="get" th:action="@{/cartQuantityModify}">
+						<input type="hidden" name = "cartId" th:value="${i.cartId}">
+						<input type="hidden" name = "colorId" th:value="${i.colorId}">
+						<input type="hidden" name = "sizeId" th:value="${i.sizeId}">
+						<input type="hidden" name = "productId" th:value="${i.productId}">
+						
+						<input type="number" th:value="${i.quantity}" name="modifiedQuantity"   min=1 max=10>
+						<input type="submit" value="modify">
+					</form>
+				</td>
+				<td>
+					<a th:href="@{/removeItem/{cartId}/{colorId}/{sizeId}/{productId}  (cartId=${i.cartId},colorId=${i.colorId},sizeId=${i.sizeId},productId=${i.productId}  ) }">Remove</a>
+				</td>
+			
+			</tr>
+			
+		</table>
+
+	  	<a th:href="@{/checkout}" class="checkout-button">Checkout</a>		
+	</div>
+
+
+
+
+
+	<div th:replace="fragments/footer"></div>
+
+
+
+</body>
+</html>

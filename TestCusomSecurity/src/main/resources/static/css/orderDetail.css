@@ -1,0 +1,116 @@
+/* order-detail.css */
+
+/* 테이블 스타일 */
+
+h4 {
+    text-align: center;
+}
+
+.parent-container {
+	
+	margin: 50px 20px 50px 20px;
+    min-height: 100vh; /* 화면 높이를 100%로 설정 */
+
+}
+
+.order-detail-table {
+    width: 50%;
+    border-collapse: collapse;
+    text-align: center; /* 테이블 내의 텍스트 수평 가운데 정렬 */
+    margin: 20px auto; /* 가운데 정렬을 위한 마진 추가 */
+
+}
+
+/* 테이블 헤더 스타일 */
+.order-detail-table th {
+    background-color: dodgerblue;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+/* 테이블 셀 스타일 */
+.order-detail-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* 홀수 행 배경색 스타일 */
+.order-detail-table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* 이미지 크기 조절 */
+.order-detail-table img {
+    max-width: 100px; /* 이미지 너비를 조정할 수 있습니다. */
+    max-height: 100px; /* 이미지 높이를 조정할 수 있습니다. */
+}
+
+/* 링크 스타일 */
+.order-detail-table a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* 링크를 마우스 오버했을 때 스타일 */
+.order-detail-table a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+.search-form, .clear-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0; /* 원하는 여백 설정 */
+}
+
+label {
+    margin-right: 10px; /* 라벨과 입력 필드 사이 여백 설정 */
+}
+
+
+
+
+
+
+.checkout-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: block; /* 가운데 정렬을 위해 블록 요소로 설정 */
+    margin: 0 auto; /* 수평 가운데 정렬 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    text-decoration: none;
+    width: 10%;
+}
+
+  .checkout-button:hover {
+    background-color: #2980b9;
+  }
+
+
+
+
+
+
+.alert-message {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px; /* 원하는 높이로 설정하세요 */
+    color: darkgray; 
+    border-radius: 5px; /* 라운드 박스 효과를 위해 사용 */
+    margin: 10px 0; /* 필요에 따라 마진을 조정하세요 */
+}
